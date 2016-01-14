@@ -4,6 +4,8 @@ Pretty simple app for configuring a bike with colored components, written in Elm
 
 I'll try to make the commits as meaningful as possible, so you can follow along.
 
+Here is the [demo](https://dennisreimann.github.io/elm-bike-configurator/).
+
 ![Screenshot](screenshot.png)
 
 ## Setup
