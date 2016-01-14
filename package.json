@@ -1,4 +1,21 @@
 {
+  "name": "elm-bike-configurator",
+  "description": "Pretty simple app for configuring a bike with colored components.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://dennisreimann.de",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennisreimann/elm-bike-configurator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dennisreimann/elm-bike-configurator/issues"
+  },
+  "author": {
+    "name": "Dennis Reimann",
+    "email": "mail@dennisreimann.de",
+    "url": "https://dennisreimann.de/"
+  },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
     "css-loader": "^0.23.1",
