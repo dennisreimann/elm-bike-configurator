@@ -1,4 +1,4 @@
-module Component (..) where
+module Component exposing (..)
 
 import ComponentChoice exposing (ComponentChoice)
 

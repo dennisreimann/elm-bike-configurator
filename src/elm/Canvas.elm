@@ -1,12 +1,12 @@
-module Canvas (..) where
+module Canvas exposing (..)
 
 import Html exposing (..)
-import Html.Events exposing (..)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (class, src)
 import Component exposing (Component)
+import Update exposing (Msg)
 
 
-canvasLayers : Component -> Html
+canvasLayers : Component -> Html Msg
 canvasLayers component =
     case component.selection of
         Just componentChoice ->

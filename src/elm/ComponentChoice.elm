@@ -1,4 +1,4 @@
-module ComponentChoice (..) where
+module ComponentChoice exposing (..)
 
 
 type alias ComponentChoice =

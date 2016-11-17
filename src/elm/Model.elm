@@ -1,4 +1,4 @@
-module Model (..) where
+module Model exposing (..)
 
 import Component exposing (Component)
 import AppData exposing (frame, tires, chain, saddle, grips)

@@ -1,16 +1,14 @@
-module View (..) where
+module View exposing (..)
 
 import Html exposing (..)
-import Html.Events exposing (..)
-import Html.Attributes exposing (..)
-import Signal exposing (Address)
+import Html.Attributes exposing (class, href, src, target)
 import Model exposing (Model)
-import Update exposing (Action)
-import Panel
-import Canvas
+import Update exposing (Msg)
+import Panel exposing (panel)
+import Canvas exposing (canvasLayers)
 
 
-pageHeader : Html
+pageHeader : Html Msg
 pageHeader =
     header
         [ class "header" ]
@@ -20,7 +18,7 @@ pageHeader =
         ]
 
 
-pageFooter : Html
+pageFooter : Html Msg
 pageFooter =
     footer
         [ class "footer" ]
@@ -43,10 +41,11 @@ pageFooter =
         ]
 
 
-view : Address Action -> Model -> Html
-view address model =
+view : Model -> Html Msg
+view model =
     let
-        panels = List.map (Panel.panel address) model.components
+        panels =
+            List.map panel model.components
 
         canvasBackground =
             img
@@ -55,8 +54,8 @@ view address model =
                 ]
                 []
 
-        canvasLayers =
-            canvasBackground :: (List.map Canvas.canvasLayers model.components)
+        canvas =
+            canvasBackground :: (List.map canvasLayers model.components)
     in
         div
             [ class "main" ]
@@ -64,7 +63,7 @@ view address model =
             , section
                 [ class "configurator" ]
                 [ div [ class "panels" ] panels
-                , div [ class "canvas" ] canvasLayers
+                , div [ class "canvas" ] canvas
                 ]
             , pageFooter
             ]

@@ -1,17 +1,15 @@
-module Main (..) where
+module Main exposing (..)
 
-import Html exposing (Html)
-import Signal exposing (Signal)
-import StartApp.Simple as StartApp
-import Model
-import Update
-import View
+import Html
+import Model exposing (Model, initialModel)
+import View exposing (view)
+import Update exposing (Msg, update)
 
 
-main : Signal Html
+main : Program Never Model Msg
 main =
-    StartApp.start
-        { model = Model.initialModel
-        , view = View.view
-        , update = Update.update
+    Html.beginnerProgram
+        { model = initialModel
+        , view = view
+        , update = update
         }

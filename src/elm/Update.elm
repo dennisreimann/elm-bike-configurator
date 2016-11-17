@@ -1,18 +1,17 @@
-module Update (..) where
+module Update exposing (..)
 
 import Model exposing (Model)
-import Component exposing (Component)
 import ComponentChoice exposing (ComponentChoice)
 
 
-type Action
+type Msg
     = NoOp
     | Select String ComponentChoice
 
 
-update : Action -> Model -> Model
-update action model =
-    case action of
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
         NoOp ->
             model
 

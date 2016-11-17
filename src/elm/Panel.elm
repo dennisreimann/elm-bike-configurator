@@ -1,25 +1,24 @@
-module Panel (..) where
+module Panel exposing (..)
 
 import Html exposing (..)
-import Html.Events exposing (..)
-import Html.Attributes exposing (..)
-import Signal exposing (Address)
-import Update
+import Html.Events exposing (onClick)
+import Html.Attributes exposing (class, classList)
 import Component exposing (Component)
 import ComponentChoice exposing (ComponentChoice)
+import Update exposing (Msg)
 
 
-panel : Address Update.Action -> Component -> Html
-panel address component =
+panel : Component -> Html Msg
+panel component =
     div
         [ class "panel" ]
         [ h3 [ class "panel__title" ] [ text component.name ]
-        , panelItems address component
+        , panelItems component
         ]
 
 
-panelItems : Address Update.Action -> Component -> Html
-panelItems address component =
+panelItems : Component -> Html Msg
+panelItems component =
     let
         selectionId =
             case component.selection of
@@ -30,13 +29,13 @@ panelItems address component =
                     ""
 
         items =
-            List.map (panelItem address component.id selectionId) component.choices
+            List.map (panelItem component.id selectionId) component.choices
     in
         ul [ class "panel__items" ] items
 
 
-panelItem : Address Update.Action -> String -> String -> ComponentChoice -> Html
-panelItem address componentId selectionId choice =
+panelItem : String -> String -> ComponentChoice -> Html Msg
+panelItem componentId selectionId choice =
     li
         [ classList
             [ ( "panel__item", True )
@@ -45,7 +44,7 @@ panelItem address componentId selectionId choice =
         ]
         [ button
             [ class ("panel__item__button panel__item__button--" ++ choice.id)
-            , onClick address (Update.Select componentId choice)
+            , onClick (Update.Select componentId choice)
             ]
             []
         ]

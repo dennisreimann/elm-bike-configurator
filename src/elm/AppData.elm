@@ -1,4 +1,4 @@
-module AppData (..) where
+module AppData exposing (..)
 
 import Component exposing (Component, newComponent)
 import ComponentChoice exposing (newComponentChoice)
