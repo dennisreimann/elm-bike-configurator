@@ -1,7 +1,39 @@
-module AppData exposing (..)
+module State exposing (initialModel, update)
 
-import Component exposing (Component, newComponent)
-import ComponentChoice exposing (newComponentChoice)
+import Types exposing (..)
+
+
+initialModel : Model
+initialModel =
+    { components =
+        [ frame
+        , tires
+        , chain
+        , saddle
+        , grips
+        ]
+    }
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        NoOp ->
+            model
+
+        Select componentId choice ->
+            let
+                updateComponent component =
+                    if component.id == componentId then
+                        { component | selection = Just choice }
+                    else
+                        component
+            in
+                { model | components = List.map updateComponent model.components }
+
+
+
+-- VALUES (private)
 
 
 frame : Component

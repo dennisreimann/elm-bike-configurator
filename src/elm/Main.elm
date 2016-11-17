@@ -1,9 +1,9 @@
 module Main exposing (..)
 
 import Html
-import Model exposing (Model, initialModel)
+import Types exposing (Model, Msg)
+import State exposing (initialModel, update)
 import View exposing (view)
-import Update exposing (Msg, update)
 
 
 main : Program Never Model Msg

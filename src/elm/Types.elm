@@ -1,6 +1,8 @@
-module Component exposing (..)
+module Types exposing (..)
 
-import ComponentChoice exposing (ComponentChoice)
+
+type alias Model =
+    { components : List Component }
 
 
 type alias Component =
@@ -8,6 +10,24 @@ type alias Component =
     , name : String
     , choices : List ComponentChoice
     , selection : Maybe ComponentChoice
+    }
+
+
+type alias ComponentChoice =
+    { id : String
+    , price : Int
+    }
+
+
+type Msg
+    = NoOp
+    | Select String ComponentChoice
+
+
+newComponentChoice : String -> Int -> ComponentChoice
+newComponentChoice id price =
+    { id = id
+    , price = price
     }
 
 
