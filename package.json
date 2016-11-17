@@ -18,24 +18,25 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
-    "css-loader": "^0.23.1",
-    "elm-webpack-loader": "^1.1.2",
+    "css-loader": "^0.25.0",
+    "elm-webpack-loader": "^3.0.6",
     "extract-text-webpack-plugin": "^1.0.0",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
-    "webpack-merge": "^0.7.1",
+    "webpack-merge": "^0.17.0",
     "webpack-sources": "^0.1.0"
   },
   "scripts": {
     "env": "env",
     "clean": "rm -rf dist/*",
     "prebuild": "npm run clean",
-    "build": "webpack",
+    "build": "webpack && cp -r src/images dist",
     "prewatch": "npm run clean",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --content-base src --port 3000"
+    "start": "webpack-dev-server --content-base src --port 3000"
   }
 }
