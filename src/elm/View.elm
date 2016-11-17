@@ -50,7 +50,7 @@ view model =
         canvasBackground =
             img
                 [ class "canvas__background"
-                , src "/images/bg.png"
+                , src "images/bg.png"
                 ]
                 []
 

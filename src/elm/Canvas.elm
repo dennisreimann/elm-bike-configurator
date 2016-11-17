@@ -12,7 +12,7 @@ canvasLayers component =
         Just componentChoice ->
             img
                 [ class ("canvas__layer canvas__layer--" ++ component.id)
-                , src ("/images/" ++ component.id ++ "/" ++ componentChoice.id ++ ".png")
+                , src ("images/" ++ component.id ++ "/" ++ componentChoice.id ++ ".png")
                 ]
                 []
 
