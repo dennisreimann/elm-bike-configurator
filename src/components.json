@@ -1,0 +1,132 @@
+[
+  {
+    "id": "frame",
+    "name": "Frame",
+    "choices": [
+      {
+        "id": "lightblue",
+        "price": 50
+      },
+      {
+        "id": "darkblue",
+        "price": 50
+      },
+      {
+        "id": "green",
+        "price": 45
+      },
+      {
+        "id": "pink",
+        "price": 50
+      },
+      {
+        "id": "white",
+        "price": 50
+      },
+      {
+        "id": "rainbow",
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": "grips",
+    "name": "Grips",
+    "choices": [
+      {
+        "id": "white",
+        "price": 10
+      },
+      {
+        "id": "yellow",
+        "price": 10
+      },
+      {
+        "id": "green",
+        "price": 10
+      },
+      {
+        "id": "pink",
+        "price": 10
+      },
+      {
+        "id": "brown",
+        "price": 10
+      },
+      {
+        "id": "black",
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "saddle",
+    "name": "Saddle",
+    "choices": [
+      {
+        "id": "white",
+        "price": 15
+      },
+      {
+        "id": "yellow",
+        "price": 20
+      },
+      {
+        "id": "green",
+        "price": 20
+      },
+      {
+        "id": "pink",
+        "price": 20
+      },
+      {
+        "id": "brown",
+        "price": 15
+      },
+      {
+        "id": "black",
+        "price": 15
+      }
+    ]
+  },
+  {
+    "id": "chain",
+    "name": "Chain",
+    "choices": [
+      {
+        "id": "yellow",
+        "price": 30
+      },
+      {
+        "id": "green",
+        "price": 30
+      },
+      {
+        "id": "pink",
+        "price": 30
+      },
+      {
+        "id": "lightblue",
+        "price": 30
+      },
+      {
+        "id": "gray",
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "tires",
+    "name": "Tires",
+    "choices": [
+      {
+        "id": "white",
+        "price": 80
+      },
+      {
+        "id": "black",
+        "price": 80
+      }
+    ]
+  }
+]

@@ -1,15 +1,27 @@
 module Types exposing (..)
 
+import Http
+import Dict exposing (Dict)
+
 
 type alias Model =
-    { components : List Component }
+    { components : List Component
+    , selection : Selection
+    }
+
+
+type alias Selection =
+    Dict String ComponentChoice
+
+
+type alias ComponentId =
+    String
 
 
 type alias Component =
-    { id : String
+    { id : ComponentId
     , name : String
     , choices : List ComponentChoice
-    , selection : Maybe ComponentChoice
     }
 
 
@@ -20,21 +32,5 @@ type alias ComponentChoice =
 
 
 type Msg
-    = NoOp
-    | Select String ComponentChoice
-
-
-newComponentChoice : String -> Int -> ComponentChoice
-newComponentChoice id price =
-    { id = id
-    , price = price
-    }
-
-
-newComponent : String -> String -> List ComponentChoice -> Component
-newComponent id name choices =
-    { id = id
-    , name = name
-    , choices = choices
-    , selection = List.head choices
-    }
+    = ComponentsFetched (Result Http.Error (List Component))
+    | Select ComponentId ComponentChoice

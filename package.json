@@ -34,7 +34,7 @@
     "env": "env",
     "clean": "rm -rf dist/*",
     "prebuild": "npm run clean",
-    "build": "webpack && cp -r src/images dist",
+    "build": "webpack && cp -r src/images src/components.json dist",
     "prewatch": "npm run clean",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --content-base src --port 3000"
